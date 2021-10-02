@@ -1,0 +1,24 @@
+syntax = "proto3";
+package copystore;
+option go_package = "./copystore";
+
+service CopyStore {
+  rpc PasteContent(PasteReq) returns (PasteResp);
+  rpc GetContent(GetReq) returns (GetResp);
+}
+
+message PasteReq{
+  string content = 1;
+}
+
+message PasteResp{
+  string url = 1;
+}
+
+message GetReq{
+  string url=1;
+}
+
+message GetResp{
+  string content =1 ;
+}

@@ -1,0 +1,1 @@
+protoc --go_out=./rpc/ --twirp_out=./rpc/  rpc/copy_store.proto
