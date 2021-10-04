@@ -1,6 +1,6 @@
 syntax = "proto3";
 package copystore;
-option go_package = "./copystore";
+option go_package = "./copystore/values";
 
 service CopyStore {
   rpc PasteContent(PasteReq) returns (PasteResp);
