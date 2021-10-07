@@ -4,6 +4,7 @@ import (
 	"context"
 	"net/http"
 
+	mdb "github.com/call-stack/copy_store.git/internal/mongo"
 	rdb "github.com/call-stack/copy_store.git/internal/redis"
 	"github.com/call-stack/copy_store.git/internal/server"
 	"github.com/call-stack/copy_store.git/rpc/copystore"
@@ -25,6 +26,10 @@ func main() {
 	//some value to set when we initialize.
 	rclient := rdb.RedisCore{}
 	rclient.SetRedisClient()
+
+	mClient := mdb.MongoCore{}
+	mClient.SetMongoClient()
+
 	wrapped := withUserAgent(twip_handler)
 	http.ListenAndServe(":8080", wrapped)
 }

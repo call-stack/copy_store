@@ -5,10 +5,13 @@ import (
 	"crypto/md5"
 	"encoding/base64"
 	"fmt"
+	"log"
 	"time"
 
 	rdb "github.com/call-stack/copy_store.git/internal/redis"
 	"github.com/go-redis/redis/v8"
+	"go.mongodb.org/mongo-driver/mongo"
+	"go.mongodb.org/mongo-driver/mongo/options"
 )
 
 type Helper struct{}
@@ -39,4 +42,20 @@ func (h *Helper) setHashInRedis(ctx context.Context, hash string) {
 	if err != nil {
 		panic(err)
 	}
+}
+
+func (h *Helper) storeInMongo(ctx context.Context, bson_content []byte) {
+	client, _ := mongo.NewClient(options.Client().ApplyURI("mongodb://localhost:27018"))
+	err := client.Connect(ctx)
+	if err != nil {
+		log.Fatal(err)
+	}
+
+	collection := client.Database("content").Collection("data_store")
+	_, insertErr := collection.InsertOne(ctx, bson_content)
+	if insertErr != nil {
+		log.Println("Error: ", insertErr)
+		log.Fatal()
+	}
+
 }
