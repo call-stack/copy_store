@@ -2,7 +2,7 @@
 // versions:
 // 	protoc-gen-go v1.27.1
 // 	protoc        v3.6.1
-// source: rpc/copy_store.proto
+// source: copy_store.proto
 
 package copystore
 
@@ -31,7 +31,7 @@ type PasteReq struct {
 func (x *PasteReq) Reset() {
 	*x = PasteReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_copy_store_proto_msgTypes[0]
+		mi := &file_copy_store_proto_msgTypes[0]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -44,7 +44,7 @@ func (x *PasteReq) String() string {
 func (*PasteReq) ProtoMessage() {}
 
 func (x *PasteReq) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_copy_store_proto_msgTypes[0]
+	mi := &file_copy_store_proto_msgTypes[0]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -57,7 +57,7 @@ func (x *PasteReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PasteReq.ProtoReflect.Descriptor instead.
 func (*PasteReq) Descriptor() ([]byte, []int) {
-	return file_rpc_copy_store_proto_rawDescGZIP(), []int{0}
+	return file_copy_store_proto_rawDescGZIP(), []int{0}
 }
 
 func (x *PasteReq) GetContent() string {
@@ -78,7 +78,7 @@ type PasteResp struct {
 func (x *PasteResp) Reset() {
 	*x = PasteResp{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_copy_store_proto_msgTypes[1]
+		mi := &file_copy_store_proto_msgTypes[1]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -91,7 +91,7 @@ func (x *PasteResp) String() string {
 func (*PasteResp) ProtoMessage() {}
 
 func (x *PasteResp) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_copy_store_proto_msgTypes[1]
+	mi := &file_copy_store_proto_msgTypes[1]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -104,7 +104,7 @@ func (x *PasteResp) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use PasteResp.ProtoReflect.Descriptor instead.
 func (*PasteResp) Descriptor() ([]byte, []int) {
-	return file_rpc_copy_store_proto_rawDescGZIP(), []int{1}
+	return file_copy_store_proto_rawDescGZIP(), []int{1}
 }
 
 func (x *PasteResp) GetUrl() string {
@@ -125,7 +125,7 @@ type GetReq struct {
 func (x *GetReq) Reset() {
 	*x = GetReq{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_copy_store_proto_msgTypes[2]
+		mi := &file_copy_store_proto_msgTypes[2]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -138,7 +138,7 @@ func (x *GetReq) String() string {
 func (*GetReq) ProtoMessage() {}
 
 func (x *GetReq) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_copy_store_proto_msgTypes[2]
+	mi := &file_copy_store_proto_msgTypes[2]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -151,7 +151,7 @@ func (x *GetReq) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetReq.ProtoReflect.Descriptor instead.
 func (*GetReq) Descriptor() ([]byte, []int) {
-	return file_rpc_copy_store_proto_rawDescGZIP(), []int{2}
+	return file_copy_store_proto_rawDescGZIP(), []int{2}
 }
 
 func (x *GetReq) GetUrl() string {
@@ -172,7 +172,7 @@ type GetResp struct {
 func (x *GetResp) Reset() {
 	*x = GetResp{}
 	if protoimpl.UnsafeEnabled {
-		mi := &file_rpc_copy_store_proto_msgTypes[3]
+		mi := &file_copy_store_proto_msgTypes[3]
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		ms.StoreMessageInfo(mi)
 	}
@@ -185,7 +185,7 @@ func (x *GetResp) String() string {
 func (*GetResp) ProtoMessage() {}
 
 func (x *GetResp) ProtoReflect() protoreflect.Message {
-	mi := &file_rpc_copy_store_proto_msgTypes[3]
+	mi := &file_copy_store_proto_msgTypes[3]
 	if protoimpl.UnsafeEnabled && x != nil {
 		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
 		if ms.LoadMessageInfo() == nil {
@@ -198,7 +198,7 @@ func (x *GetResp) ProtoReflect() protoreflect.Message {
 
 // Deprecated: Use GetResp.ProtoReflect.Descriptor instead.
 func (*GetResp) Descriptor() ([]byte, []int) {
-	return file_rpc_copy_store_proto_rawDescGZIP(), []int{3}
+	return file_copy_store_proto_rawDescGZIP(), []int{3}
 }
 
 func (x *GetResp) GetContent() string {
@@ -208,51 +208,51 @@ func (x *GetResp) GetContent() string {
 	return ""
 }
 
-var File_rpc_copy_store_proto protoreflect.FileDescriptor
+var File_copy_store_proto protoreflect.FileDescriptor
 
-var file_rpc_copy_store_proto_rawDesc = []byte{
-	0x0a, 0x14, 0x72, 0x70, 0x63, 0x2f, 0x63, 0x6f, 0x70, 0x79, 0x5f, 0x73, 0x74, 0x6f, 0x72, 0x65,
-	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x12, 0x09, 0x63, 0x6f, 0x70, 0x79, 0x73, 0x74, 0x6f, 0x72,
-	0x65, 0x22, 0x24, 0x0a, 0x08, 0x50, 0x61, 0x73, 0x74, 0x65, 0x52, 0x65, 0x71, 0x12, 0x18, 0x0a,
-	0x07, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07,
-	0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x22, 0x1d, 0x0a, 0x09, 0x50, 0x61, 0x73, 0x74, 0x65,
-	0x52, 0x65, 0x73, 0x70, 0x12, 0x10, 0x0a, 0x03, 0x75, 0x72, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28,
-	0x09, 0x52, 0x03, 0x75, 0x72, 0x6c, 0x22, 0x1a, 0x0a, 0x06, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71,
+var file_copy_store_proto_rawDesc = []byte{
+	0x0a, 0x10, 0x63, 0x6f, 0x70, 0x79, 0x5f, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x2e, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x12, 0x09, 0x63, 0x6f, 0x70, 0x79, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x22, 0x24, 0x0a,
+	0x08, 0x50, 0x61, 0x73, 0x74, 0x65, 0x52, 0x65, 0x71, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x6f, 0x6e,
+	0x74, 0x65, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x6f, 0x6e, 0x74,
+	0x65, 0x6e, 0x74, 0x22, 0x1d, 0x0a, 0x09, 0x50, 0x61, 0x73, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70,
 	0x12, 0x10, 0x0a, 0x03, 0x75, 0x72, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x75,
-	0x72, 0x6c, 0x22, 0x23, 0x0a, 0x07, 0x47, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x12, 0x18, 0x0a,
-	0x07, 0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07,
-	0x63, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x32, 0x7b, 0x0a, 0x09, 0x43, 0x6f, 0x70, 0x79, 0x53,
-	0x74, 0x6f, 0x72, 0x65, 0x12, 0x39, 0x0a, 0x0c, 0x50, 0x61, 0x73, 0x74, 0x65, 0x43, 0x6f, 0x6e,
-	0x74, 0x65, 0x6e, 0x74, 0x12, 0x13, 0x2e, 0x63, 0x6f, 0x70, 0x79, 0x73, 0x74, 0x6f, 0x72, 0x65,
-	0x2e, 0x50, 0x61, 0x73, 0x74, 0x65, 0x52, 0x65, 0x71, 0x1a, 0x14, 0x2e, 0x63, 0x6f, 0x70, 0x79,
-	0x73, 0x74, 0x6f, 0x72, 0x65, 0x2e, 0x50, 0x61, 0x73, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x12,
-	0x33, 0x0a, 0x0a, 0x47, 0x65, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x12, 0x11, 0x2e,
-	0x63, 0x6f, 0x70, 0x79, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71,
-	0x1a, 0x12, 0x2e, 0x63, 0x6f, 0x70, 0x79, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x2e, 0x47, 0x65, 0x74,
-	0x52, 0x65, 0x73, 0x70, 0x42, 0x0d, 0x5a, 0x0b, 0x2e, 0x2f, 0x63, 0x6f, 0x70, 0x79, 0x73, 0x74,
-	0x6f, 0x72, 0x65, 0x62, 0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
+	0x72, 0x6c, 0x22, 0x1a, 0x0a, 0x06, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x12, 0x10, 0x0a, 0x03,
+	0x75, 0x72, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x75, 0x72, 0x6c, 0x22, 0x23,
+	0x0a, 0x07, 0x47, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70, 0x12, 0x18, 0x0a, 0x07, 0x63, 0x6f, 0x6e,
+	0x74, 0x65, 0x6e, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x07, 0x63, 0x6f, 0x6e, 0x74,
+	0x65, 0x6e, 0x74, 0x32, 0x7b, 0x0a, 0x09, 0x43, 0x6f, 0x70, 0x79, 0x53, 0x74, 0x6f, 0x72, 0x65,
+	0x12, 0x39, 0x0a, 0x0c, 0x50, 0x61, 0x73, 0x74, 0x65, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74,
+	0x12, 0x13, 0x2e, 0x63, 0x6f, 0x70, 0x79, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x2e, 0x50, 0x61, 0x73,
+	0x74, 0x65, 0x52, 0x65, 0x71, 0x1a, 0x14, 0x2e, 0x63, 0x6f, 0x70, 0x79, 0x73, 0x74, 0x6f, 0x72,
+	0x65, 0x2e, 0x50, 0x61, 0x73, 0x74, 0x65, 0x52, 0x65, 0x73, 0x70, 0x12, 0x33, 0x0a, 0x0a, 0x47,
+	0x65, 0x74, 0x43, 0x6f, 0x6e, 0x74, 0x65, 0x6e, 0x74, 0x12, 0x11, 0x2e, 0x63, 0x6f, 0x70, 0x79,
+	0x73, 0x74, 0x6f, 0x72, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x65, 0x71, 0x1a, 0x12, 0x2e, 0x63,
+	0x6f, 0x70, 0x79, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x2e, 0x47, 0x65, 0x74, 0x52, 0x65, 0x73, 0x70,
+	0x42, 0x0d, 0x5a, 0x0b, 0x2e, 0x2f, 0x63, 0x6f, 0x70, 0x79, 0x73, 0x74, 0x6f, 0x72, 0x65, 0x62,
+	0x06, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x33,
 }
 
 var (
-	file_rpc_copy_store_proto_rawDescOnce sync.Once
-	file_rpc_copy_store_proto_rawDescData = file_rpc_copy_store_proto_rawDesc
+	file_copy_store_proto_rawDescOnce sync.Once
+	file_copy_store_proto_rawDescData = file_copy_store_proto_rawDesc
 )
 
-func file_rpc_copy_store_proto_rawDescGZIP() []byte {
-	file_rpc_copy_store_proto_rawDescOnce.Do(func() {
-		file_rpc_copy_store_proto_rawDescData = protoimpl.X.CompressGZIP(file_rpc_copy_store_proto_rawDescData)
+func file_copy_store_proto_rawDescGZIP() []byte {
+	file_copy_store_proto_rawDescOnce.Do(func() {
+		file_copy_store_proto_rawDescData = protoimpl.X.CompressGZIP(file_copy_store_proto_rawDescData)
 	})
-	return file_rpc_copy_store_proto_rawDescData
+	return file_copy_store_proto_rawDescData
 }
 
-var file_rpc_copy_store_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
-var file_rpc_copy_store_proto_goTypes = []interface{}{
+var file_copy_store_proto_msgTypes = make([]protoimpl.MessageInfo, 4)
+var file_copy_store_proto_goTypes = []interface{}{
 	(*PasteReq)(nil),  // 0: copystore.PasteReq
 	(*PasteResp)(nil), // 1: copystore.PasteResp
 	(*GetReq)(nil),    // 2: copystore.GetReq
 	(*GetResp)(nil),   // 3: copystore.GetResp
 }
-var file_rpc_copy_store_proto_depIdxs = []int32{
+var file_copy_store_proto_depIdxs = []int32{
 	0, // 0: copystore.CopyStore.PasteContent:input_type -> copystore.PasteReq
 	2, // 1: copystore.CopyStore.GetContent:input_type -> copystore.GetReq
 	1, // 2: copystore.CopyStore.PasteContent:output_type -> copystore.PasteResp
@@ -264,13 +264,13 @@ var file_rpc_copy_store_proto_depIdxs = []int32{
 	0, // [0:0] is the sub-list for field type_name
 }
 
-func init() { file_rpc_copy_store_proto_init() }
-func file_rpc_copy_store_proto_init() {
-	if File_rpc_copy_store_proto != nil {
+func init() { file_copy_store_proto_init() }
+func file_copy_store_proto_init() {
+	if File_copy_store_proto != nil {
 		return
 	}
 	if !protoimpl.UnsafeEnabled {
-		file_rpc_copy_store_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
+		file_copy_store_proto_msgTypes[0].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PasteReq); i {
 			case 0:
 				return &v.state
@@ -282,7 +282,7 @@ func file_rpc_copy_store_proto_init() {
 				return nil
 			}
 		}
-		file_rpc_copy_store_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
+		file_copy_store_proto_msgTypes[1].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*PasteResp); i {
 			case 0:
 				return &v.state
@@ -294,7 +294,7 @@ func file_rpc_copy_store_proto_init() {
 				return nil
 			}
 		}
-		file_rpc_copy_store_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
+		file_copy_store_proto_msgTypes[2].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetReq); i {
 			case 0:
 				return &v.state
@@ -306,7 +306,7 @@ func file_rpc_copy_store_proto_init() {
 				return nil
 			}
 		}
-		file_rpc_copy_store_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
+		file_copy_store_proto_msgTypes[3].Exporter = func(v interface{}, i int) interface{} {
 			switch v := v.(*GetResp); i {
 			case 0:
 				return &v.state
@@ -323,18 +323,18 @@ func file_rpc_copy_store_proto_init() {
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
-			RawDescriptor: file_rpc_copy_store_proto_rawDesc,
+			RawDescriptor: file_copy_store_proto_rawDesc,
 			NumEnums:      0,
 			NumMessages:   4,
 			NumExtensions: 0,
 			NumServices:   1,
 		},
-		GoTypes:           file_rpc_copy_store_proto_goTypes,
-		DependencyIndexes: file_rpc_copy_store_proto_depIdxs,
-		MessageInfos:      file_rpc_copy_store_proto_msgTypes,
+		GoTypes:           file_copy_store_proto_goTypes,
+		DependencyIndexes: file_copy_store_proto_depIdxs,
+		MessageInfos:      file_copy_store_proto_msgTypes,
 	}.Build()
-	File_rpc_copy_store_proto = out.File
-	file_rpc_copy_store_proto_rawDesc = nil
-	file_rpc_copy_store_proto_goTypes = nil
-	file_rpc_copy_store_proto_depIdxs = nil
+	File_copy_store_proto = out.File
+	file_copy_store_proto_rawDesc = nil
+	file_copy_store_proto_goTypes = nil
+	file_copy_store_proto_depIdxs = nil
 }

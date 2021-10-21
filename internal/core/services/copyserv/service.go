@@ -5,6 +5,7 @@ import (
 	"crypto/md5"
 	"encoding/base64"
 	"fmt"
+	"log"
 	"time"
 
 	"github.com/call-stack/copy_store.git/internal/core/domain"
@@ -19,7 +20,7 @@ func New(repo ports.Repository) *service {
 	return &service{repo: repo}
 }
 
-func (srv *service) StoreContent(ctx context.Context, content string) error {
+func (srv *service) StoreContent(ctx context.Context, content string) (string, error) {
 	clientIP := ctx.Value("remote-addr").(string)
 	ct_nano := time.Now().UnixNano()
 	data_to_hash := clientIP + fmt.Sprint(ct_nano)
@@ -29,17 +30,23 @@ func (srv *service) StoreContent(ctx context.Context, content string) error {
 	store := domain.Store{
 		URL:     content_url,
 		Content: content,
-		Hash:    hash,
 		TTL:     "100",
 	}
-	srv.repo.Create(store)
 
-	return nil
+	err := srv.repo.Create(store)
+	if err != nil {
+		log.Fatal()
+	}
+
+	return content_url, nil
 }
 
 func (srv *service) GetContent(ctx context.Context, url string) (*domain.Store, error) {
 
-	//get the content for a give URL.
+	content, err := srv.repo.Get(url)
+	if err != nil {
+		log.Fatal()
+	}
 
-	return nil, nil
+	return &content, nil
 }

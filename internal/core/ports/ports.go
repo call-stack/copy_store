@@ -7,7 +7,7 @@ import (
 )
 
 type CopyStore interface {
-	StoreContent(ctx context.Context, content string) error
+	StoreContent(ctx context.Context, content string) (string, error)
 	GetContent(ctx context.Context, url string) (*domain.Store, error)
 }
 
