@@ -3,6 +3,7 @@ module github.com/call-stack/copy_store.git
 go 1.16
 
 require (
+	github.com/gin-gonic/gin v1.7.4 // indirect
 	github.com/go-ozzo/ozzo-validation v3.6.0+incompatible // indirect
 	github.com/go-redis/redis/v8 v8.11.3 // indirect
 	github.com/pkg/errors v0.9.1 // indirect
