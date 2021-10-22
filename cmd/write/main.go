@@ -7,7 +7,7 @@ import (
 	copyserv "github.com/call-stack/copy_store.git/internal/core/services/copyserv"
 	"github.com/call-stack/copy_store.git/internal/handlers/copyhdl"
 	"github.com/call-stack/copy_store.git/internal/repo/copyrepo"
-	"github.com/call-stack/copy_store.git/rpc/copystore"
+	"github.com/call-stack/copy_store.git/rpc/writestore"
 )
 
 var (
@@ -30,8 +30,8 @@ func withUserAgent(base http.Handler) http.Handler {
 func main() {
 	copyrepo := copyrepo.NewRepo()
 	copyservice := copyserv.New(copyrepo)
-	copyhadlr := copyhdl.Newserver(copyservice)
-	twip_handler := copystore.NewCopyStoreServer(copyhadlr)
+	copyhadlr := copyhdl.NewWriterServer(copyservice)
+	twip_handler := writestore.NewWriteStoreServer(copyhadlr)
 	wrapped := withUserAgent(twip_handler)
 	http.ListenAndServe(":5000", wrapped)
 }

@@ -1,0 +1,16 @@
+syntax = "proto3";
+package readstore;
+option go_package = "./readstore";
+
+service ReadStore {
+  rpc GetContent(GetReq) returns (GetResp);
+}
+
+
+message GetReq{
+    string url=1;
+  }
+  
+  message GetResp{
+    string content =1 ;
+  }

@@ -1,0 +1,15 @@
+syntax = "proto3";
+package writestore;
+option go_package = "./writestore";
+
+service WriteStore {
+  rpc PasteContent(PasteReq) returns (PasteResp);
+}
+
+message PasteReq{
+  string content = 1;
+}
+
+message PasteResp{
+  string url = 1;
+}
