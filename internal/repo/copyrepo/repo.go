@@ -15,7 +15,7 @@ type repo struct {
 }
 
 func NewRepo() *repo {
-	mongoClient, _ := mongo.NewClient(options.Client().ApplyURI("mongodb://localhost:27018"))
+	mongoClient, _ := mongo.NewClient(options.Client().ApplyURI("mongodb://mongo:27017"))
 	err := mongoClient.Connect(context.TODO())
 	if err != nil {
 		log.Fatal(err)
