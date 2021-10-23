@@ -5,6 +5,6 @@ Created an app with similar use case as pastebin. Where you can store any conten
 
 
 ## DB used
-MongoDB - For DB
+MongoDB - For DB 
 
 ### Tried to follow hexagonal design pattern to develop the app.
