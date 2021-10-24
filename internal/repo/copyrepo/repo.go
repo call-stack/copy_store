@@ -2,7 +2,9 @@ package copyrepo
 
 import (
 	"context"
+	"fmt"
 	"log"
+	"os"
 
 	"github.com/call-stack/copy_store.git/internal/core/domain"
 	"go.mongodb.org/mongo-driver/bson"
@@ -15,7 +17,9 @@ type repo struct {
 }
 
 func NewRepo() *repo {
-	mongoClient, _ := mongo.NewClient(options.Client().ApplyURI("mongodb://mongo:27017"))
+	mongoURI := fmt.Sprintf("mongodb+srv://dev-user:%s@copystore.hcale.mongodb.net/myFirstDatabase?retryWrites=true&w=majority", os.Getenv("MONGODB_PASSWORD"))
+
+	mongoClient, _ := mongo.NewClient(options.Client().ApplyURI(mongoURI))
 	err := mongoClient.Connect(context.TODO())
 	if err != nil {
 		log.Fatal(err)
