@@ -33,7 +33,7 @@ func (r *repo) Get(id string) (domain.Store, error) {
 
 	err := collection.FindOne(context.TODO(), bson.M{"url": id}).Decode(&store)
 	if err != nil {
-		log.Fatal(err)
+		return domain.Store{Content: ""}, nil
 	}
 
 	return store, nil
