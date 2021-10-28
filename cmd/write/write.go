@@ -1,7 +1,6 @@
 package main
 
 import (
-	"context"
 	"log"
 	"net/http"
 
@@ -17,23 +16,12 @@ var (
 	MongoURI   = "mongodb://localhost:27018"
 )
 
-func withUserAgent(base http.Handler) http.Handler {
-	return http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
-		ctx := r.Context()
-		ra := r.RemoteAddr
-		ctx = context.WithValue(ctx, "remote-addr", ra)
-		r = r.WithContext(ctx)
-
-		base.ServeHTTP(w, r)
-	})
-}
-
 func main() {
 	copyrepo := copyrepo.NewRepo()
 	copyservice := copyserv.New(copyrepo)
 	copyhadlr := copyhdl.NewWriterServer(copyservice)
 	twip_handler := writestore.NewWriteStoreServer(copyhadlr)
-	wrapped := withUserAgent(twip_handler)
+
 	log.Println("Running in port 5000")
-	http.ListenAndServe(":5000", wrapped)
+	http.ListenAndServe(":5000", twip_handler)
 }

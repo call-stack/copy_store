@@ -31,7 +31,7 @@ func (r *repo) Get(id string) (domain.Store, error) {
 	store := domain.Store{}
 	collection := r.mongoClient.Database("content").Collection("data_store")
 
-	err := collection.FindOne(context.TODO(), bson.M{"url": id}).Decode(&store)
+	err := collection.FindOne(context.TODO(), bson.M{"hash": id}).Decode(&store)
 	if err != nil {
 		return domain.Store{Content: ""}, nil
 	}

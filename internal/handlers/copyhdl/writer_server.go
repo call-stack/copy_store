@@ -18,20 +18,10 @@ func NewWriterServer(copystore ports.CopyStore) *writer {
 }
 
 func (sr *writer) PasteContent(ctx context.Context, req *ws.PasteReq) (*ws.PasteResp, error) {
-	url, err := sr.copystore.StoreContent(ctx, req.Content)
+	url, err := sr.copystore.StoreContent(ctx, req.Content, req.RemoteAddress)
 	if err != nil {
 		return &ws.PasteResp{}, err
 	}
 
 	return &ws.PasteResp{Url: url}, nil
 }
-
-// func (sr *server) GetContent(ctx context.Context, req *pb.GetReq) (*pb.GetResp, error) {
-// 	content, err := sr.copystore.GetContent(ctx, req.Url)
-
-// 	if err != nil {
-// 		log.Fatal()
-// 	}
-
-// 	return &pb.GetResp{Content: content.Content}, nil
-// }

@@ -8,6 +8,7 @@ service WriteStore {
 
 message PasteReq{
   string content = 1;
+  string remote_address = 2;
 }
 
 message PasteResp{

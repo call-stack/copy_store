@@ -7,10 +7,10 @@ service ReadStore {
 }
 
 
-message GetReq{
-    string url=1;
-  }
+message GetReq {
+  string hash=1;
+}
   
-  message GetResp{
-    string content =1 ;
-  }
+message GetResp{
+  string content =1 ;
+}

@@ -12,6 +12,8 @@ import (
 	"github.com/call-stack/copy_store.git/internal/core/ports"
 )
 
+const HOST_IP = "172.105.39.53"
+
 type service struct {
 	repo ports.Repository
 }
@@ -20,15 +22,15 @@ func New(repo ports.Repository) *service {
 	return &service{repo: repo}
 }
 
-func (srv *service) StoreContent(ctx context.Context, content string) (string, error) {
-	clientIP := ctx.Value("remote-addr").(string)
+func (srv *service) StoreContent(ctx context.Context, content string, remoteAddr string) (string, error) {
+	fmt.Println(remoteAddr)
 	ct_nano := time.Now().UnixNano()
-	data_to_hash := clientIP + fmt.Sprint(ct_nano)
+	data_to_hash := remoteAddr + fmt.Sprint(ct_nano)
 	md5_encoded := md5.Sum([]byte(data_to_hash))
-	hash := base64.URLEncoding.EncodeToString(md5_encoded[:])[:7]
-	content_url := fmt.Sprintf("http://127.0.0.1:8080/twirp/GetContent/%s", hash)
+	URLHash := base64.URLEncoding.EncodeToString(md5_encoded[:])[:7]
+
 	store := domain.Store{
-		URL:     content_url,
+		Hash:    URLHash,
 		Content: content,
 		TTL:     "100",
 	}
@@ -38,12 +40,13 @@ func (srv *service) StoreContent(ctx context.Context, content string) (string, e
 		log.Fatal()
 	}
 
-	return content_url, nil
+	URL := fmt.Sprintf("%s/%s", HOST_IP, URLHash)
+	return URL, nil
 }
 
-func (srv *service) GetContent(ctx context.Context, url string) (*domain.Store, error) {
+func (srv *service) GetContent(ctx context.Context, hash string) (*domain.Store, error) {
 
-	content, err := srv.repo.Get(url)
+	content, err := srv.repo.Get(hash)
 	if err != nil {
 		log.Fatal()
 	}

@@ -19,7 +19,8 @@ func NewReaderServer(copystore ports.CopyStore) *reader {
 }
 
 func (sr *reader) GetContent(ctx context.Context, req *rs.GetReq) (*rs.GetResp, error) {
-	content, err := sr.copystore.GetContent(ctx, req.Url)
+
+	content, err := sr.copystore.GetContent(ctx, req.Hash)
 
 	if err != nil {
 		log.Fatal()
